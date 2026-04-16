@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Bill</title>
+        <style>
+            body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+        .form{
+            width: 300px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        span{
+            text-align: center;
+            
+        }
+        table{
+            background-color: rgb(203, 198, 198);
+        }
+        b{
+            font-size: 30;
+            background-color: bisque;
+        }
+        
+        </style>
+    </head>
+    <body>
+        <div class="form">
+            <center>
+                <b> BILL</b><br><br>
+               
+            
+            <table border="1">
+              <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>No. of Items</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>T-Shirt</td>
+                    <td><span id="tshirt"></span></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                    <td>Jeans</td>
+                    <td><span id="jeans"></span></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                    <td>Cake</td>
+                    <td><span id="cake"></span></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                    <td>Calculator</td>
+                    <td><span id="mg"></span></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                    <td>Coke</td>
+                    <td><span id="coke"></span></td>
+                </tr>
+              </tbody>
+            </table>
+            <h3>Total Amount = $<span id="total"></span></h3><br><br><br>
+            <p>Have a Good Day!</p>
+            <p>See you later!</p>
+            </center>
+            
+        </div>
+        <script>
+            let fields = ["tshirt","jeans","cake","mg","coke"];
+
+         fields.forEach(function(id){
+         document.getElementById(id).innerText =
+         localStorage.getItem(id);
+});
+window.onload = function(){
+    let total = localStorage.getItem("total") || 0;
+    document.getElementById("total").innerText = total;
+}
+</script>
+       
+        </script>
+    </body>
+</html>

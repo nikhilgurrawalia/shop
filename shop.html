@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <title>
+            html
+        </title>
+        <style>
+            body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+        .form-box {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        h2{
+            text-align: left;
+            margin-left: 200;
+            font-style: italic;
+        }
+        button{
+            
+            width: 25;
+           height: 25;
+           font-size: 20;
+           background-color: blue;
+        }
+        h1{
+           font-size: 50;
+           font-style: unset;
+                      
+        }
+        .prize-box{
+            margin-left: 200;
+
+        }
+        input{
+            background-color: aquamarine;
+        }
+        .gen{
+            background-color: red;
+            
+            
+            width: 100;
+        }
+        
+        </style>
+    </head>
+    <body>
+        <div class="form-box">
+        <center>
+            <h1>FLIPAZON</h1>
+            </center>
+            <img src="https://images-na.ssl-images-amazon.com/images/I/611D5oZ3ePL._AC_UL1000_.jpg" witdh="100" height="100" align="left"></image>
+            
+            <h2 >T-Shirt</h2>
+            <h2>$399</h2>
+            <div class="prize-box">
+            <button onclick="add('+','tshirt')">+</button>&nbsp;&nbsp;&nbsp;
+            <button onclick="add('-','tshirt')">-</button> 
+            </div>
+            <input type="text" id="tshirt" placeholder="No. of tshirt" width="5" height="20"><br><hr>
+
+            <img src="https://lsco.scene7.com/is/image/lsco/A47500021-front-pdp-ld?fmt=jpeg&qlt=70&resMode=sharp2&fit=crop,1&op_usm=0.6,0.6,8&wid=2000&hei=2500" witdh="100" height="100" align="left" ></image>
+            <h2>Jeans</h2>
+            <h2>$150</h2><div class="prize-box">
+            <button onclick="add('+','jeans')">+</button>&nbsp;&nbsp;&nbsp;
+            <button onclick="add('-','jeans')">-</button> 
+            </div>
+            
+            <input type="number" id="jeans" placeholder="select number of jeans"><br><hr>
+
+            <img src="https://wallpaperaccess.com/full/986759.jpg " witdh="100" height="100" align="left"></image>
+            <h2>Cake</h2>
+            <h2>$99</h2><div class="prize-box">
+            <button onclick="add('+','cake')">+</button>&nbsp;&nbsp;&nbsp;
+            <button onclick="add('-','cake')">-</button> 
+            </div>
+            
+            <input type="number" id="cake" placeholder="select number of cake"><br><hr>
+
+            <img src="https://images-na.ssl-images-amazon.com/images/I/71tL5t4sVvL.jpg" witdh="100" height="100" align="left"></image>
+            <h2>Calculator</h2>
+            <h2>$49</h2><div class="prize-box">
+            <button onclick="add('+','mg')">+</button>&nbsp;&nbsp;&nbsp;
+            <button onclick="add('-','mg')">-</button> 
+            </div>
+            
+            <input type="number" id="mg" placeholder="select number of machine gun"><br><hr>
+
+            <img src="https://tse3.mm.bing.net/th/id/OIP.WOSP3xuNdHk7iAhyxm6aUQHaHa?pid=Api&P=0&h=180" witdh="100" height="100" align="left"></image>
+            <h2>Coke</h2>
+            <h2>$9</h2><div class="prize-box">
+            <button onclick="add('+','coke')">+</button>&nbsp;&nbsp;&nbsp;
+            <button onclick="add('-','coke')">-</button> 
+            </div>
+            
+            <input type="number" id="coke" placeholder="select number of coke"><br><br>
+            
+            <center>
+            <button onclick="generate()" class="gen">Generate</button>
+            </center>
+            </div>
+  
+            <script>
+                 function add(type, id){
+                 let input = document.getElementById(id);
+                 let value = Number(input.value);
+
+                 if(type === '+'){
+                   input.value = value + 1;
+            } 
+             else if(type === '-'){
+            if(value > 0){
+              input.value = value - 1;
+        }
+    }
+}
+    
+function generate(){
+
+    let tshirt = Number(document.getElementById("tshirt").value) || 0;
+    let jeans = Number(document.getElementById("jeans").value) || 0;
+    let cake = Number(document.getElementById("cake").value) || 0;
+    let mg = Number(document.getElementById("mg").value) || 0;
+    let coke = Number(document.getElementById("coke").value) || 0;
+
+    
+    let total = tshirt*399 + jeans*150 + cake*99 + mg*49 + coke*9;
+
+
+    localStorage.setItem("tshirt", tshirt);
+    localStorage.setItem("jeans", jeans);
+    localStorage.setItem("cake", cake);
+    localStorage.setItem("mg", mg);
+    localStorage.setItem("coke", coke);
+    localStorage.setItem("total", total);
+
+    
+    window.location.href = "bill.html";
+}
+</script>
+        
+
+                
+            
+    </body>
+</html>
